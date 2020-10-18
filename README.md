@@ -30,7 +30,7 @@ Profile edition
 Destination file: file.mp4 -> Start
 
 #### If the file.mp4 has more than 1 audio track:
-You have to delete them with ffmpeg
+You have to delete them with ffmpeg:
 ```
 sudo apt-get update
 sudo apt-get install ffmpeg
