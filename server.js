@@ -8,7 +8,7 @@ const filesfolder = './public/videos/';
 var fs = require('fs');
 
 var filesarray = [];
-console.log("Archivos encontrados: ");
+console.log("Files found: ");
 fs.readdirSync(filesfolder).forEach(file => {
 	filesarray.push(file)
 	console.log(file);
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 	console.log("nuevo acceso: " + ip);
 	res.write('<body>');
-	res.write('<h1>Selecciona un video</h1>');
+	res.write('<h1>Select a file</h1>');
 	res.write('<form action="/video" method="POST">');
 	filesarray.forEach(file => {
 		res.write('<button id="name" name="name" value="' + file + '" type="submit">' + file + '</button>')
@@ -40,7 +40,7 @@ app.get('/', function (req, res) {
 
 app.post('/video', function (req, res){
 	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-	console.log(ip + " esta viendo: " + req.body.name);
+	console.log(ip + " is watching: " + req.body.name);
 	res.write('<body>');
 	res.write('<p><video id="myVideo" src="videos/'+ req.body.name + '" type=\'video/mp4; codecs="vorbis"\' autoplay controls onerror="failed(event)" ></video></p>');
 	res.write('</body>');
@@ -59,4 +59,4 @@ for (var k in interfaces) {
     }
 }
 
-console.log("La dirección del servidor es " + addresses + ":3000");
+console.log("The IP of the server is " + addresses + ":3000");
