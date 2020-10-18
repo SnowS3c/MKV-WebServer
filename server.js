@@ -1,5 +1,4 @@
-
-// Importar el módulo express en una variable
+// Import modules
 var express = require('express');
 var os = require('os');
 
