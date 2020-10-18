@@ -38,7 +38,7 @@ Elimina la pista de audio nº 0 (Se empieza a contar por el 0)
 ```
 Pequeña ayuda:
 
-![alt text](https://github.com/antonio5040/Play-MKV-Web-Server-Basic/blob/master/ffmpeg.png)
+![alt text](https://github.com/xansx/MKV-WebServer/blob/main/ffmpeg.png)
 
 ## Crear Node Server
 ```
