@@ -53,7 +53,7 @@ npm init
 npm install express --save
 ```
 
-## Exec Node
+## Launc Node
 ```
 node server.js
 ```
