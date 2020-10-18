@@ -42,7 +42,7 @@ app.post('/video', function (req, res){
 	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 	console.log(ip + " is watching: " + req.body.name);
 	res.write('<body>');
-	res.write('<p><video id="myVideo" src="videos/'+ req.body.name + '" type=\'video/mp4; codecs="vorbis"\' autoplay controls onerror="failed(event)" ></video></p>');
+	res.write('<p><video id="myVideo" src="videos/'+ req.body.name + '" type=\'video/mp4; codecs="vorbis"\' autoplay controls" ></video></p>');
 	res.write('</body>');
 	res.end();
 });
