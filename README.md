@@ -16,7 +16,7 @@ Use the script convert.sh to change the format from mkv to mp4.
 ```
 
 ### Manually 
-VLC
+Open VLC
 
 Media -> Convert -> Add... (Select files) -> Convert/Save
 
