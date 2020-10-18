@@ -6,17 +6,16 @@ the film you want to watch.
 Save all the files in the directory ./public/videos/
 
 ## Convert MKV to MP4
+There are 2 options: 
 
-### 2 Options
-
-### * Fast
+### Fast
 Use the script convert.sh to change the format from mkv to mp4.
 ```
 ./convert.sh file.mkv
 ./convert.sh file1.mkv file2.mkv file3.mkv
 ```
 
-### * Manually 
+### Manually 
 VLC
 
 Media -> Convert -> Add... (Select files) -> Convert/Save
