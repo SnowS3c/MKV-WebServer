@@ -1,53 +1,59 @@
-# Play-MKV-Files-Web-Server-Basic
-Reproducir archivos mkv en páginas web mediante Node.
+# Play MKV Films on a Web Server
+Play films in format mkv on web pages using Node. First convert mkv file into mp4 file using the script ```convert.sh```
+or you can convert it manually with VLC. Then exec the node server to host the films and open a web browser, go to localhost:3000 and select
+the film you want to watch.
 
-Guardar los videos en el directorio ./public/videos/
+Save all the files in the directory ./public/videos/
 
-## Convertir MKV a MP4
+## Convert MKV to MP4
 
-### 2 Opciones
+### 2 Options
 
-### Rapida
-Usa convert.sh para cambiar la codificacion de los ficheros mkv a mp4
+### Fast
+Use the script convert.sh to change the format from mkv to mp4.
+```
+./convert.sh file.mkv
+./convert.sh file1.mkv file2.mkv file3.mkv
+```
 
-### Lenta 
-VLC (si da error Herramientas -> Preferencias -> Restaurar preferencias)
+### Manually 
+VLC
 
-Medio -> Convertir -> Añadir (Seleccionar fichero) -> Convertir/Guardar
+Media -> Convert -> Add... (Select files) -> Convert/Save
 
-Perfil Video - H.264 + MP3 (MP4) -> (Editar perfil seleccionado (LLAVE INGLESA))
+Profile Video - H.264 + MP3 (MP4) -> (Edit(Tool Settings))
 
-Edición perfil
-- Códec de vídeo -> Mantener pista de vídeo original
-- Códec de audio -> Códec MPEG 4 Audio (AAC) - Canales 1
-- Guardar
+Profile edition
+- Video codec -> Keep original video track
+- Audio codec -> Codec MPEG 4 Audio (AAC) - Channels 1
+- Save
 
-Archivo de destino: Fichero de salida.mp4 -> INICIAR
+Destination file: file.mp4 -> Start
 
-#### Si el archivo.mp4 tiene mas de 1 pista de audio:
+#### If the file.mp4 has more than 1 audio track:
+You have to delete them with ffmpeg
 ```
 sudo apt-get update
 sudo apt-get install ffmpeg
-ffmpeg -i file.mp4 -map 0 -map -0:a:0 -c copy file.mp4
+ffmpeg -i input_file.mp4 -map 0 -map -0:a:0 -c copy output_file.mp4
 ```
-Elimina la pista de audio nº 0 (Se empieza a contar por el 0)
-
+Use -map to select the streams.
 ```
--map 0 Selecciona todos los streams del input
--map -0:a:2 Deselecciona stream audio 3
+-map 0 Selects all streams from the input
+-map -0:a:2 Deselects audio stream 3.
 ```
-Pequeña ayuda:
+More help:
 
 ![alt text](https://github.com/xansx/MKV-WebServer/blob/main/ffmpeg.png)
 
-## Crear Node Server
+## Create Node Server
 ```
 cd Folder
 npm init
 npm install express --save
 ```
 
-## Ejecutar Node
+## Exec Node
 ```
 node server.js
 ```
