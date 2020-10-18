@@ -1,9 +1,9 @@
 # Play MKV Films on a Node Web Server
 Play films in format mkv on web pages using Node. First convert mkv file into mp4 file using the script ```convert.sh```
-or you can convert it manually with VLC. Then exec the node server to host the films and open a web browser, go to localhost:3000 and select
+or you can convert it manually with VLC. Then exec the node server to host the films and open a web browser, go to ip-server:3000 and select
 the film you want to watch.
 
-Save all the files in the directory ./public/videos/
+Save all the files you want to play in the directory ./public/videos/
 
 ## Convert MKV to MP4
 There are 2 options: 
