@@ -26,7 +26,7 @@ var server = app.listen(3000);
 
 app.get('/', function (req, res) {
 	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-	console.log("nuevo acceso: " + ip);
+	console.log("new access: " + ip);
 	res.write('<body>');
 	res.write('<h1>Select a file</h1>');
 	res.write('<form action="/video" method="POST">');
