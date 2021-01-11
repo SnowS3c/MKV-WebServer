@@ -3,8 +3,7 @@
 for var in "$@"
 do
 
-    if [ ${var: -4} == ".mkv" ];
-    then
+    if [ ${var: -4} == ".mkv" ]; then
 
         file="$(realpath "$var")"
 
